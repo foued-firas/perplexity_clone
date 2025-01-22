@@ -10,8 +10,8 @@ search_service = SearchService()
 # chat 
 @app.post("/chat")
 def chat_endpoint(body :ChatBody):
-    search_service.web_search(body.query)
-    print(body.query)
+    search_results = search_service.web_search(body.query)
+    print(search_results)
     return body.query
 
 
