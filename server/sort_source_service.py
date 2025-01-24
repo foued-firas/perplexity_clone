@@ -10,3 +10,6 @@ class SortSourceService :
         query_embedding = self.embedding_model.encode(query)
 
         print(query_embedding)
+
+
+        
