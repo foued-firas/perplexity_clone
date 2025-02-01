@@ -5,13 +5,7 @@ settings = Settings()
 class LLMService:
     def __init__(self):
         genai.configure(api_key=settings.GEMINI_API_KEY)
-        generation_config = {
-            "temperature": 1,
-            "top_p": 0.95,
-            "top_k": 40,
-            "max_output_tokens": 8192,
-            "response_mime_type": "text/plain",
-        }
+        
         self.model = genai.GenerativeModel("gemini-2.0-flash-exp")
         
 
@@ -34,6 +28,7 @@ class LLMService:
         Do not use your knowledge  untill it is absolutely necessary .
         """
 
-        response = self.model.generate_content(full_prompt)
+        response = self.model.generate_content(full_prompt , stream=True)
 
-        return response.text
+        for chunk in response :
+            yield chunk.text # return data
