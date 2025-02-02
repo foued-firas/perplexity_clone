@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:perplexity_clone/pages/chat_page.dart';
 import 'package:perplexity_clone/pages/home_page.dart';
 import 'package:perplexity_clone/theme/color.dart';
 
@@ -19,10 +20,15 @@ class MyApp extends StatelessWidget {
       scaffoldBackgroundColor: AppColors.background,
       colorScheme: ColorScheme.fromSeed(seedColor: AppColors.submitButton) ,
       textTheme: GoogleFonts.interTextTheme(
-        ThemeData.dark().textTheme,
+        ThemeData.dark().textTheme.copyWith(
+          bodyMedium: const TextStyle(
+            fontSize: 16,
+            color: AppColors.whiteColor,
+          )
+        ),
       ),
      ),
-      home: const  HomePage (),
+      home: ChatPage (question: 'Who is Elon Musk',),
     );
   }
 }
