@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/widgets/footer_bar.dart';
@@ -25,19 +26,23 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
     body: Row(
       children: [
-       const SideBar(),
+       kIsWeb ?
+       const SideBar() : const SizedBox(),
         Expanded(
 
-          child: Column(
-            children: [
-               Expanded(child: SearchSection()),
+          child: Padding(
+            padding: !kIsWeb ? const  EdgeInsets.all(8.0): EdgeInsets.zero,
+            child: Column(
+              children: [
+                 Expanded(child: SearchSection()),
+              
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                 child:  FooterBar(),
+                ),
             
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-               child:  FooterBar(),
-              ),
-          
-            ],
+              ],
+            ),
           ),
         )
       ],

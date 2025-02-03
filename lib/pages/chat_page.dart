@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/theme/color.dart';
 import 'package:perplexity_clone/widgets/answer_section.dart';
@@ -8,25 +9,14 @@ class ChatPage extends StatelessWidget {
   final String question;
   const ChatPage({super.key, required this.question});
 
-   /*StreamBuilder(
-               stream: ChatWebService().contentStream,
-               builder: (context , snapshot){
-                if (snapshot.connectionState ==ConnectionState.waiting){
-                  return const Center(
-                    child:CircularProgressIndicator() ,
-                  );
-                }
-                fullResponse += snapshot.data?['data'] ?? '';
-                return Text(fullResponse);
-               },
-              ),*/
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Row(
         children: [
-          SideBar(),
-          SizedBox(width: 100,),
+         kIsWeb ?  SideBar() : SizedBox(),
+                 kIsWeb ?  SizedBox(width: 100,) :SizedBox(),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
@@ -52,10 +42,10 @@ class ChatPage extends StatelessWidget {
               ),
             ),
           ),
-          Placeholder(
+                 kIsWeb ?  Placeholder(
             strokeWidth: 0,
             color: AppColors.background,
-          )
+          ) :const SizedBox()
 
         ],
       ),
