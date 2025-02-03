@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/theme/color.dart';
 
 class SourcesSection extends StatefulWidget {
@@ -9,20 +10,20 @@ class SourcesSection extends StatefulWidget {
 }
 
 class _SourcesSectionState extends State<SourcesSection> {
-  List<Map<String, dynamic>> searchResults = [
-  {
-    "title": "Ind vs Aus Live Score 4th Test",
-    "url": "https://www.mon..."
-  },
-  {
-    "title": "Ind vs Aus Live Boxing Day Test",
-    "url": "https://timesofin..."
-  },
-  {
-    "title": "Ind vs Aus - 4 Australians",
-    "url": "https://economicti..."
+  
+  List searchResults = [];
+  @override
+  void initState() {
+    super.initState();
+    ChatWebService().searchResultStream.listen((data){
+      setState(() {
+              searchResults= data['data'];
+
+      });
+
+    });
+
   }
-];
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -58,7 +59,7 @@ class _SourcesSectionState extends State<SourcesSection> {
                   TextStyle(
                     
                     fontWeight: FontWeight.w500,
-
+        
                   ),
                   maxLines: 2,
                    overflow: TextOverflow.ellipsis,
@@ -69,20 +70,20 @@ class _SourcesSectionState extends State<SourcesSection> {
                     fontWeight: FontWeight.w500,
                     fontSize: 12,
                     color: Colors.grey,
-
+        
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
-
+        
             );
-
+        
             }).toList(),
-
+        
           
-
+        
         ),
       ],
     );

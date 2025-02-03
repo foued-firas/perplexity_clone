@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/theme/color.dart';
 
 class AnswerSection extends StatefulWidget {
@@ -10,6 +11,19 @@ class AnswerSection extends StatefulWidget {
 }
 
 class _AnswerSectionState extends State<AnswerSection> {
+  String fullResponse ='';
+  @override
+  void initState() {
+    
+    super.initState();
+    ChatWebService().contentStream.listen((data){
+      setState(() {
+        fullResponse += data['data'];
+      });
+
+    });
+     
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +36,7 @@ class _AnswerSectionState extends State<AnswerSection> {
         ),
         ),
         Markdown(
-          data: "",
+          data: fullResponse,
           shrinkWrap: true,
           styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
             codeblockDecoration:  BoxDecoration(
@@ -30,7 +44,7 @@ class _AnswerSectionState extends State<AnswerSection> {
               borderRadius:  BorderRadius.circular(10),
 
             ),
-            code: TextStyle(fontSize: 16),
+             code: const  TextStyle(fontSize: 16),
 
  
           ),
