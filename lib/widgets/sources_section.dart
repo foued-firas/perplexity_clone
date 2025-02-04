@@ -86,6 +86,7 @@ class _SourcesSectionState extends State<SourcesSection> {
                     maxLines: 2,
                      overflow: TextOverflow.ellipsis,
                     ),
+                    
                     SizedBox(height: 8,),
                     Text(res['url'],style: 
                     TextStyle(
