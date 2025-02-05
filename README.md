@@ -1,19 +1,23 @@
-Building a Perplexity Clone: AI-Powered Search with Flutter, FastAPI & Gemini AI! 🤖✨
-I'm thrilled to share my latest project—a Perplexity AI Clone that combines AI-powered search and Retrieval-Augmented Generation (RAG) using Flutter, FastAPI (Python), and Google Gemini AI!
-🔍 How It Works:
-1️⃣ Web Search with Tavily API → Finds relevant sources from the web.
-2️⃣ Content Extraction with Trafilatura → Cleans and extracts text from web pages.
-3️⃣ Semantic Ranking with Sentence Transformers → Sorts results based on similarity to the user query.
-4️⃣ AI-Powered Answer Generation with Google Gemini → Generates detailed responses using the best-ranked sources.
-5️⃣ Flutter Frontend for a Seamless UI → Provides a user-friendly experience across mobile & web.
-⚙️ Tech Stack Used:
-🔹 Frontend: Flutter (Dart) – Cross-platform (Mobile & Web)
-🔹 Backend: FastAPI (Python)
-🔹 AI Model: Google Gemini AI
-🔹 Search API: Tavily
-🔹 Text Processing: Trafilatura
-🔹 Embedding Model: all-MiniLM-L6-v2 (Sentence Transformers)
-🔹 Ranking Algorithm: Cosine Similarity
-🔮 Future Enhancements:
-📂 File & Image Attachments – Enable users to search using uploaded content.
-📜 Search History & Personalization – Improve results based on past interactions.
+🔍 Perplexity AI Clone – AI-Powered Search with Flutter, FastAPI & Gemini AI! 🤖✨
+🚀 Bienvenue sur mon projet de clone de Perplexity AI, une plateforme de recherche avancée qui combine l'intelligence artificielle et la génération augmentée par récupération (RAG) pour fournir des réponses précises et pertinentes.
+
+🌟 Fonctionnalités
+1️⃣ Recherche Web avec Tavily API – Trouve des sources pertinentes sur le web.
+2️⃣ Extraction de Contenu avec Trafilatura – Nettoie et extrait le texte des pages web.
+3️⃣ Classement Sémantique avec Sentence Transformers – Trie les résultats en fonction de leur similarité avec la requête utilisateur.
+4️⃣ Génération de Réponses avec Google Gemini AI – Génère des réponses détaillées à partir des meilleures sources.
+5️⃣ Interface Flutter – Expérience utilisateur fluide sur mobile et web.
+
+🛠️ Stack Technique
+Frontend : Flutter (Dart) – Application cross-platform (Mobile & Web).
+Backend : FastAPI (Python).
+Modèle d’IA : Google Gemini AI.
+API de recherche : Tavily.
+Traitement de texte : Trafilatura.
+Modèle d’Embedding : all-MiniLM-L6-v2 (Sentence Transformers).
+Algorithme de Classement : Similarité cosinus.
+🔮 Améliorations Futures
+🔹 Fichiers & Images en Entrée – Permettre la recherche à partir de documents et d'images.
+🔹 Historique & Personnalisation – Adapter les résultats en fonction des interactions précédentes.
+
+💡 N'hésite pas à contribuer ou à me faire part de tes suggestions ! 🚀
